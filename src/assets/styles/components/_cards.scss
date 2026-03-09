@@ -1,0 +1,98 @@
+@use "../abstracts/colours" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+@mixin cards {
+  background: var(--COLOURIII);
+  padding: $paddingxs;
+  box-shadow: $box-shadow;
+  border-radius: $border-radiussm;
+}
+
+//! static
+@mixin cardstatic {
+    @include cards;
+    border-radius: $border-radiuslg 0rem $border-radiuslg 0rem;
+}
+
+//! revolve
+.revolve {
+    @include cards;
+    border-radius: 0rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.revolve .span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background: linear-gradient( to right, var(--BRANDI), var(--BRANDIII) );
+    animation: animei 6s linear infinite;
+}
+.revolve .span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.2rem;
+    height: 100%;
+    background: linear-gradient( to bottom, var(--BRANDI), var(--BRANDIII) );
+    animation: animeii 6s linear infinite 3s;
+}
+.revolve .span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background: linear-gradient( to left, var(--BRANDI), var(--BRANDIII) );
+    animation: animeiii 6s linear infinite;
+}
+
+.revolve .span:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.2rem;
+    height: 100%;
+    background: linear-gradient( to top, var(--BRANDI), var(--BRANDIII) );
+    animation: animeiv 6s linear infinite 3s;
+}
+
+@keyframes animei {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%)
+    }
+}
+
+@keyframes animeii {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%)
+    }
+}
+
+@keyframes animeiii {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%)
+    }
+}
+
+@keyframes animeiv {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%)
+    }
+}

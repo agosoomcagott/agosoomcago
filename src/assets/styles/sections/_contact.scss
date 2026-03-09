@@ -1,0 +1,104 @@
+@use "../abstracts/base" as *;
+@use "../abstracts/colours" as *;
+@use "../abstracts/fonts" as *;
+@use "../abstracts/grids" as *;
+@use "../abstracts/icons" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+@use "../components/buttons" as *;
+
+#contact {
+    @include gridsimple;
+    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url("./../images/index/contact.png") no-repeat center center /cover;
+    
+    .contact {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: space-between;
+        gap: 7rem;
+
+        .channels {
+            @include flexcolumn;
+            gap: 1rem;
+            width: 100%;
+
+            .social {
+                @include flexrow;
+
+                a { transition: transform 0.4s ease-in-out; }
+                a:hover { transform: scale(1.5); }
+
+                .github { color: var(--GITHUB); }
+                .linkedin { color: var(--LINKEDIN); }
+                .whatsapp { color: var(--WHATSAPP); }
+                .twitter { color: var(--BRANDII); }
+                .instagram { color: var(--INSTAGRAM); }
+                .facebook { color: var(--FACEBOOK); }
+
+            }
+
+        }
+
+        .contactform {
+            width: 100%;
+            
+            form {
+                @include gridsimple;
+                gap: 1rem;
+                
+                .forminputs {
+                    @include flexcolumn;
+                    gap: 2rem;
+                    
+                    .inputfield, .textareafield {
+                        @include flexcolumn;
+                        gap: 0.2rem;
+                        
+                        input, textarea { max-width: 100%; }
+                        textarea { resize: none; min-height: 11rem; }
+                        
+                        .input {
+                            padding: $paddingxs;
+                            font-weight: bold;
+                            color: var(--BRANDI);
+                            font-size: $font-size;
+                            outline: transparent;
+                            border: none;
+                            border-radius: $border-radiusxs;
+                            transition: all ease-in-out 0.4s;
+                        }
+
+                        .input:focus { box-shadow: $box-shadowi; outline: none; border: none; }
+                    
+                    }
+                    
+                    .field.error .input { border: 0.1rem solid var(--ERROR); }
+                    .errortext { display: none; color: var(--ERROR); }
+                    .field.error .errortext { display: block; }
+            
+                }
+            
+                .send { @include buttons; width: 100%; }
+                .send:hover { @include buttonshover; }
+            
+            }
+        
+        }
+    
+    }
+
+}
+
+//! Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    #contact .contact {
+        justify-content: space-between;
+        gap: 2.5rem;
+
+        .channels { width: 40%; }
+        .contactform { width: 50%; }
+    }
+
+}

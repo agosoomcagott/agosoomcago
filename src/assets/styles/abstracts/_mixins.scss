@@ -1,0 +1,18 @@
+@use "variables" as *;
+
+@mixin flexrow { display: flex; flex-direction: row; align-items: center; justify-content: space-between; }
+@mixin flexcolumn { display: flex; flex-direction: column; }
+@mixin flexwrap { display: flex; align-content: space-between; flex-wrap: wrap; gap: 2.5rem; }
+
+%title { position: relative; }
+%titleheading { font-size: $font-sizelg; font-weight: 700; position: relative; }
+%titleheadingafter {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 5rem;
+    height: 0.1rem;
+    background: var(--BRANDIII);
+    left: 0;
+    bottom: 0;
+}

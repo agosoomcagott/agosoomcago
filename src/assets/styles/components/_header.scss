@@ -1,0 +1,118 @@
+@use "../abstracts/base" as *;
+@use "../abstracts/colours" as *;
+@use "../abstracts/fonts" as *;
+@use "../abstracts/grids" as *;
+@use "../abstracts/icons" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+@use "buttons" as *;
+@use "cards" as *;
+
+header {
+  @include flexcolumn;
+  justify-content: space-around;
+  gap: 1rem;
+  background: var(--BRANDII);
+  color: var(--BRANDI);
+  position: fixed;
+  padding: 0rem $paddingxs;
+  left: -100%;
+  top: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.4s;
+  z-index: 2;
+  box-shadow: $box-shadowii;
+  
+  a { color: var(--BRANDI); }
+  
+  .burger {
+    @include navbutton;
+  
+    .linei, .lineii, .lineiii {
+      height: 0.2rem;
+      width: 2rem;
+      background: var(--TEXTI);
+      border-radius: $border-radiuslg;
+      transition: all .4s;
+    }
+    
+    .lineei { transform: rotate(-405deg) translate(-0.43rem, 0.43rem); background: var(--BRANDIII); }
+    .lineeii { opacity: 0; }
+    .lineeiii { transform: rotate(405deg) translate(-0.43rem, -0.43rem); background: var(--BRANDIII); }
+
+  }
+  .burgeri { border: 0.1rem solid var(--BRANDIII); }
+
+  .imgsocialmedia {
+    @include cards;
+    @include gridsimple;
+    place-content: center;
+    margin-top: $marginxxl;
+    
+    .img figure {
+      @include flexcolumn;
+      align-items: center;
+      justify-content: center;
+      
+      img {border: 0.01rem solid var(--BRANDI); border-radius: $border-radiussm; }
+
+      a {
+        color: var(--BRANDI);
+        transition: all ease-in-out 0.4s;
+
+        h2 { font-size: $font-sizelg; word-spacing: 1rem; }
+
+      }
+      a:hover { color: var(--TEXTI); }
+
+    }
+
+    .socialmedia {
+      @include flexrow;
+      gap: 1rem;
+      
+      a {
+        @include flexrow;
+        justify-content: center;
+        transition: all ease-in-out 0.4s;
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+      
+      a:hover { background: var(--BRANDIII); color: var(--BRANDI); border-radius: $border-circle; }
+  
+    }
+  
+  }
+
+}
+
+.shownav { left: 0; width: 100%; }
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  header {
+    left: 0;
+    
+    .burger { display: none; }
+
+    .imgsocialmedia {
+      margin-top: $margin;
+      
+      .socialmedia {
+        @include flexrow;
+        gap: 0.5rem;
+        
+        a { width: 2.2rem; height: 2.2rem; }
+    
+      }
+    
+    }
+  
+  }
+  
+  .shownav { width: auto; }
+
+}
+

@@ -1,0 +1,8 @@
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+@mixin gridsimple { display: grid; gap: 2.5rem; }

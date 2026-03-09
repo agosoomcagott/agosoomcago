@@ -1,0 +1,44 @@
+@use "colours" as *;
+@use "../abstracts/fonts" as *;
+
+//! padding
+$padding: 0.2rem;
+$paddingxs: 0.75rem;
+$paddingsm: 1rem;
+$paddinglg: 1.5rem;
+$paddingxl: 2rem;
+$paddingxxl: 4rem;
+$paddingsection: 22rem;
+$paddingspecial: $paddingxxl $paddinglg;
+
+//! margin
+$margin: 0.5rem;
+$marginsm: 1rem;
+$marginlg: 1.5rem;
+$marginxl: 2rem;
+$marginxxl: 4rem;
+$marginvertical: $marginsm 0rem;
+
+//! border radius
+$border-radius: 0.2rem;
+$border-radiusxs: 0.4rem;
+$border-radiussm: 0.7rem;
+$border-radiuslg: 2rem;
+$border-circle: 50%;
+
+//! fonts
+$font-familyi: "Gupter";
+$font-familyii: "Gabriela";
+
+// font sizes
+$font-size: 1rem;
+$font-sizexs: 1.2rem;
+$font-sizesm: 1.5rem;
+$font-sizelg: 2rem;
+$font-sizexl: 2.5rem;
+$font-sizexxl: 3.5rem;
+
+//! box-shadow
+$box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$box-shadowi: 0 0 0.7rem var(--BRANDIII), 0 0 2.5rem var(--BRANDIII), 0 0 5rem var(--BRANDIII);
+$box-shadowii: 0.01rem 0.01rem 2rem var(--BRANDIII);

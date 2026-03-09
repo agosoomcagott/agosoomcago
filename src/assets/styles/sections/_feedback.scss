@@ -1,0 +1,22 @@
+@use "../abstracts/base" as *;
+@use "../abstracts/colours" as *;
+@use "../abstracts/fonts" as *;
+@use "../abstracts/grids" as *;
+@use "../abstracts/icons" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+@use "../components/buttons" as *;
+
+#feedback {
+    @include flexcolumn;
+    gap: 4rem;
+    min-height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("./../images/feedback/feedback.png") fixed no-repeat center /cover;
+
+    h1 { font-size: $font-sizexl; }
+    
+    a { @include buttons; }
+    a:hover { @include buttonshover; }
+
+}

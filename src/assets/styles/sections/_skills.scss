@@ -1,0 +1,32 @@
+@use "../abstracts/base" as *;
+@use "../abstracts/colours" as *;
+@use "../abstracts/fonts" as *;
+@use "../abstracts/grids" as *;
+@use "../abstracts/icons" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+#skills {
+    @include gridsimple;
+    background: var(--BRANDI);
+    color: var(--BRANDII);
+    
+    .skills {
+        @include flexwrap;
+        justify-content: center;
+        padding-bottom: $paddinglg;
+
+        p { font-size: clamp( $font-sizexl, 10vw, $font-sizexxl); }
+
+        .html { color: var(--HTML); }
+        .css { color: var(--CSS); }
+        .tailwindcss { color: var(--TAILWIND); }
+        .javascript { color: var(--JAVASCRIPT); }
+        .nodejs { color: var(--NODEJS); }
+        .mongodb { color: var(--MONGODB); }
+        .sass { color: var(--SASS); }
+        .bootstrap { color: var(--BOOTSTRAP); }
+        .materialize { color: var(--MATERIALIZE); }
+    }
+
+}

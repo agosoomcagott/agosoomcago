@@ -1,0 +1,78 @@
+@use "../abstracts/base" as *;
+@use "../abstracts/colours" as *;
+@use "../abstracts/fonts" as *;
+@use "../abstracts/grids" as *;
+@use "../abstracts/icons" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+footer {
+    @include flexcolumn;
+    gap: 1rem;
+    
+    .contactslinks {
+        @include flexcolumn;
+        gap: 5rem;
+        
+        .clinks {
+            @include flexcolumn;
+            gap: 1.5rem;
+            
+            h4 { color: var(--BRANDIII); font-size: $font-sizelg; }
+        
+            .contacts {
+                @include flexcolumn;
+                gap: 1.5rem;
+
+                p { display: flex; gap: 1rem; }
+
+            }
+
+            .social {
+                @include flexrow;
+
+                a { transition: transform 0.4s ease-in-out; }
+                a:hover { transform: scale(1.5); }
+
+                .github { color: var(--GITHUB); }
+                .linkedin { color: var(--LINKEDIN); }
+                .whatsapp { color: var(--WHATSAPP); }
+                .twitter { color: var(--BRANDII); }
+                .instagram { color: var(--INSTAGRAM); }
+                .facebook { color: var(--FACEBOOK); }
+
+            }
+
+            .quicklinks {
+                @include flexcolumn;
+                gap: 1rem;
+
+                a { color: var(--BRANDII); transition: all ease-in-out 0.4s; }
+                a:hover { color: var(--TEXTI); }
+
+            }
+
+        }
+
+    }
+
+    .copyrightsdeveloper {
+        @include flexcolumn;
+        gap: 4rem;
+        
+        .developer {
+            letter-spacing: 0.2rem;
+            font-weight: bold;
+            font-family: $font-familyii;
+            color: var(--BRANDII);
+            text-shadow: 1px 1px 2px var(--BRANDIII), 0 0 25px var(--BRANDI), 0 0 5px var(--BRANDI);
+        }
+    
+    }
+
+}
+
+//! Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    footer { .contactslinks, .copyrightsdeveloper { @include flexrow; align-items: flex-start; } }
+}

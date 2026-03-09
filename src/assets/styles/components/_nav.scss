@@ -1,0 +1,18 @@
+@use "../abstracts/base" as *;
+@use "../abstracts/colours" as *;
+@use "../abstracts/fonts" as *;
+@use "../abstracts/grids" as *;
+@use "../abstracts/icons" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+nav .navlist {
+  @include flexcolumn;
+  gap: 2.5rem;
+
+  .navlink { font-size: $font-sizexs; }
+  .navlink:hover .navicon { box-shadow: $box-shadow; color: var(--BRANDIII); }
+  .navlink.active .navicon { color: var(--BRANDIII); }
+  .navicon { transition: all ease-in-out 0.4s; }
+
+}

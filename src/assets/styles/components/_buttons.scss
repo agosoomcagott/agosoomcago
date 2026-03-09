@@ -1,0 +1,37 @@
+@use "../abstracts/colours" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+//! General buttons
+@mixin buttons {
+  background: var(--BRANDIII);
+  color: var(--BRANDI);
+  font-weight: 1000;
+  padding: $padding;
+  font: bold $font-sizexs $font-familyii;
+  transition: all ease-in-out 0.4s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: $border-radius;
+  text-align: center;
+}
+@mixin buttonshover { background: var(--SUCCESS); color: var(--BRANDII); }
+
+//! Navigation button
+@mixin navbutton {
+  @include buttons;
+  @include flexcolumn;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border-radius: $border-circle;
+  height: 3rem;
+  width: 3rem;
+  border: 0.1rem solid var(--TEXTI);
+  z-index: 4;
+}

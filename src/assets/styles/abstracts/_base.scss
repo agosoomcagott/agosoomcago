@@ -1,0 +1,42 @@
+@use "colours" as *;
+@use "variables" as *;
+@use "fonts" as *;
+@use "grids" as *;
+@use "mixins" as *;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  background: var(--BRANDI);
+  color: var(--BRANDII);
+  font-family: $font-familyi;
+  font-size: $font-size;
+  
+  ul, li { list-style-type: none; }
+
+  img { max-width: 100%; height: auto; }
+
+  a { text-decoration: none; }
+  
+  #hero, #about, #skills, #projects, #contact, footer, #feedback {
+    padding: $paddingxl;
+    
+    .title {
+      @extend %title;
+      
+      h3 { @extend %titleheading; }
+      h3:after { @extend %titleheadingafter; }
+    
+    }
+  
+  }
+
+}
+
+//! Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  body #hero, #about, #skills, #projects, #contact, footer, #feedback { padding: $paddingxl $paddingxl $paddingxl $paddingsection !important; }
+}

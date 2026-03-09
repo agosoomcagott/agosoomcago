@@ -1,0 +1,43 @@
+@use "../abstracts/base" as *;
+@use "../abstracts/colours" as *;
+@use "../abstracts/fonts" as *;
+@use "../abstracts/grids" as *;
+@use "../abstracts/icons" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+@use "../components/buttons" as *;
+
+#hero {
+    @include gridsimple;
+    align-content: center;
+    gap: 20%;
+    width: 100%;
+    min-height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("./../images/index/agosoomcagohero.jpg") fixed no-repeat center /cover;
+
+    .hero {
+        padding: $padding;
+        
+        h1 { font-size: clamp( $font-sizesm, 10vw, $font-sizexxl); word-spacing: 1rem; }
+        small { font-size: clamp( $font-size, 7vw, $font-sizexs); }
+        p { font-size: clamp( $font-sizexs, 7vw, $font-sizesm); }
+        
+        .actioncall { @include buttons; }
+        .actioncall:hover { @include buttonshover; }
+
+    }
+
+}
+
+//! Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    #hero {
+        gap: 30%;
+        
+        .hero:first-child { justify-self: left; }
+        .hero:nth-child(2) { justify-self: center; }
+    
+    }
+
+}

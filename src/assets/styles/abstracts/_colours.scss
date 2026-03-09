@@ -1,0 +1,42 @@
+:root {
+  --BLACK: #000000;
+  --WHITE: #ffffff;
+
+  --BRANDI: var(--BLACK);
+  --BRANDII: var(--WHITE);
+  --BRANDIII: #ffd700;
+
+  --ERROR: #ff0000;
+  --SUCCESS: #1aff00;
+  --LINKS: #0645AD;
+  
+  --NAIRAI: #008b2c;
+  --NAIRAII: #1b7339;
+  --DOLLAR: #70bb65;
+
+  --TEXTI: #908d8dff;
+  --TEXTII: #515151;
+  --TRANSPARENT: #00000070;
+
+  // Social Media
+  --GITHUB: var(--BLACK);
+  --TWITTER: var(--BLACK);
+  --FACEBOOK: #3b5998;
+  --INSTAGRAM: #e1306c;
+  --WHATSAPP: #25d366;
+  --LINKEDIN: #0077b5;
+  --YOUTUBE: #ff0000;
+  // --TELEGRAM: #0088cc;
+  --TELEGRAM: #A19679;
+
+  // Programming
+  --HTML: #F54927;
+  --CSS: #663399;
+  --JAVASCRIPT: #f7df1e;
+  --NODEJS: #68A063;
+  --SASS: #cd6799;
+  --BOOTSTRAP: #602c50;
+  --MATERIALIZE: #ed7272;
+  --TAILWIND: #06b6d4;
+  --MONGODB: #4DB33D;
+}

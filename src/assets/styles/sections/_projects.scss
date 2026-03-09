@@ -1,0 +1,54 @@
+@use "../abstracts/base" as *;
+@use "../abstracts/colours" as *;
+@use "../abstracts/fonts" as *;
+@use "../abstracts/grids" as *;
+@use "../abstracts/icons" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+@use "../components/buttons" as *;
+@use "../components/cards" as *;
+
+#projects {
+    @include gridsimple;
+    background: var(--BRANDII);
+    color: var(--BRANDI);
+    
+    .projects {
+        @include grid;
+        
+        .dynamics, .statics {
+            padding: $padding;
+            
+            h4 { font-size: clamp( $font-sizexs, 7vw, $font-sizesm); margin: $marginvertical; }
+            
+            .projectlinks {
+                @include gridsimple;
+
+                .links {
+                    @include flexwrap;
+                    
+                    a {
+                        color: var(--LINKS);
+                        transition: all ease-in-out 0.4s;
+                        display: inline-block; /* for heading to take up only space required, so effect will be exactly on the text. */
+                        font-size: $font-sizexs;
+                        font-weight: 500;
+                        text-shadow: 0.1rem 0.1rem 0.7rem var(--BRANDI);
+                    }
+                    a:hover { text-decoration: underline; transform: translate(-0.3125rem, -0.1875rem); text-shadow: 0.15rem 0.4rem 0.5rem var(--BRANDIII); }
+
+                }
+
+                .seemore { @include buttons; }
+                .seemore:hover { opacity: 0.7; }
+
+            }
+
+        }
+
+        .statics { @include cardstatic; }
+
+    }
+
+}

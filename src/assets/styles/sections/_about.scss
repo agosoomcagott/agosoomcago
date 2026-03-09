@@ -1,0 +1,46 @@
+@use "../abstracts/base" as *;
+@use "../abstracts/colours" as *;
+@use "../abstracts/fonts" as *;
+@use "../abstracts/grids" as *;
+@use "../abstracts/icons" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+#about {
+    @include gridsimple;
+    background: var(--BRANDII);
+    color: var(--BRANDI);
+    font-size: $font-sizexs;
+    
+    .about {
+        @include gridsimple;
+        padding-bottom: $paddinglg;
+        
+        .check {
+            @include flexcolumn;
+            gap: 4rem;
+            
+            .checks {
+                @include flexcolumn;
+                gap: 1rem;
+                
+                div {
+                    @include flexrow;
+                    justify-content: flex-start;
+                    gap: 0.2rem;
+                    
+                    span { font-size: $font-sizelg; color: var(--BRANDI); }
+                }
+
+            }
+
+        }
+    
+    }
+
+}
+
+//! Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    #about .about .check { @include flexrow; align-items: flex-start; justify-content: space-around; }
+}

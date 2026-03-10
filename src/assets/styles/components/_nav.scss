@@ -9,6 +9,7 @@
 nav .navlist {
   @include flexcolumn;
   gap: 2.5rem;
+  margin-bottom: $marginxl;
 
   .navlink { font-size: $font-sizexs; }
   .navlink:hover .navicon { box-shadow: $box-shadow; color: var(--BRANDIII); }
